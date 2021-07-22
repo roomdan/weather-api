@@ -11,8 +11,6 @@ const WeatherApp = ()=>{
     const [viewAditionalInfo, setViewAditionalInf] = useState({display: 'none'});
     const [showfirsBtn, setShowFirstBtn] = useState({display: 'flex'});
     const [showSecondBtn, setShowSecondtBtn] = useState({display: 'none'})
-
-
   
     navigator.geolocation.getCurrentPosition(function(position) {
       setCoordinates(`${position.coords.latitude},${position.coords.longitude}`);
