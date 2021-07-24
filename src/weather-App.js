@@ -10,18 +10,16 @@ const WeatherApp = ()=>{
     const [src, setSrc] = useState(''); const [textImg, setTextImg] = useState('');
     const [viewAditionalInfo, setViewAditionalInf] = useState({display: 'none'});
     const [showfirsBtn, setShowFirstBtn] = useState({display: 'flex'});
-    const [showSecondBtn, setShowSecondtBtn] = useState({display: 'none'})
+    const [showSecondBtn, setShowSecondtBtn] = useState({display: 'none'});
   
-    navigator.geolocation.getCurrentPosition(function(position) {
-      setCoordinates(`${position.coords.latitude},${position.coords.longitude}`);
-    });
+    navigator.geolocation.getCurrentPosition((position) => {
+      setCoordinates(`${position.coords.latitude},${position.coords.longitude}`)});
   
     useEffect (
       ()=>{
         const accesInfo = async ()=>{
           if(coordinates){
             const a = await WatherApi(coordinates);
-            console.log(a);
             setLocation(a.location);
             setCurrent(a.current);
             setSrc(a.current.condition.icon);
@@ -34,6 +32,11 @@ const WeatherApp = ()=>{
 
     return (
         <div className='allApp'>
+          <span style={{width: '100%', display:'flex', justifyContent:'center', alignItems:'center'}}>
+          <div className='logo-weather-fix'>
+          <img className='App-logo' src='https://cdn.pixabay.com/photo/2016/03/31/18/14/icon-1294224_960_720.png' alt='logo'></img>
+          </div>
+          </span>
         <div className='Weather-App'>
             <div className='title-app'>
                 <h1>Weather App</h1>

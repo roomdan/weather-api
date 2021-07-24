@@ -3,19 +3,18 @@
 }
 
 .App-logo {
-  height: 40vmin;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 50s linear;
   }
 }
 
 .App-header {
   background-image:linear-gradient(1deg, rgb(0, 0, 0), rgb(10, 15, 73), rgb(30, 61, 121));
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +35,15 @@
     transform: rotate(360deg);
   }
 }
+
+.logo-weather-fix {
+
+  display: flex;
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+}
+
 
 .color {
 
